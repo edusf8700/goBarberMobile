@@ -1,7 +1,11 @@
 import React from 'react';
-import { Text } from 'react-native';
+import 'react-native-gesture-handler';
+
+import Routes from './routes';
 
 // import { Container } from './styles';
 
-const src = () => <Text>Eduardo Freitas</Text>;
-export default src;
+function App() {
+  return <Routes />;
+}
+export default App;
