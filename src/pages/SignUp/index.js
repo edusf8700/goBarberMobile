@@ -35,18 +35,18 @@ function SignUp({ navigation }) {
           />
           <FormInput
             icon="mail-outline"
+            placeholder="Digite seu e-mail"
             keyboardType="email-address"
             autoCorrect={false}
             autoCapitalize="none"
-            placeholder="Digite seu e-mail"
             ref={emailRef}
             returnKeyType="next"
             onSubmitEditing={() => passwordRef.current.focus()}
           />
           <FormInput
             icon="lock-outline"
-            secureTextEntry
             placeholder="Sua senha secreta"
+            secureTextEntry
             ref={passwordRef}
             returnKeyType="send"
             onSubmitEditing={handleSubmit}
