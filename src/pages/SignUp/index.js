@@ -13,13 +13,19 @@ import {
   SignLinkText,
 } from './styles';
 
-function SignIn({ navigation }) {
+function SignUp({ navigation }) {
   return (
     <Background>
       <Container>
         <Image source={logo} />
 
         <Form>
+          <FormInput
+            icon="person-outline"
+            autoCorrect={false}
+            autoCapitalize="none"
+            placeholder="Nome completo"
+          />
           <FormInput
             icon="mail-outline"
             keyboardType="email-address"
@@ -32,15 +38,15 @@ function SignIn({ navigation }) {
             secureTextEntry
             placeholder="Sua senha secreta"
           />
-          <SubmitButton onPress={() => {}}>Acessar</SubmitButton>
+          <SubmitButton onPress={() => {}}>Criar conta</SubmitButton>
         </Form>
 
-        <SignLink onPress={() => navigation.navigate('SignUp')}>
-          <SignLinkText>Criar conta gratuita</SignLinkText>
+        <SignLink onPress={() => navigation.navigate('SignIn')}>
+          <SignLinkText>Já tenho conta</SignLinkText>
         </SignLink>
       </Container>
     </Background>
   );
 }
 
-export default SignIn;
+export default SignUp;
