@@ -4,21 +4,21 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { Container, Title } from './styles';
 import Background from '~/components/Background';
 
-function Dashboard() {
+function Profile() {
   return (
     <Background>
       <Container>
-        <Title>Agendamentos</Title>
+        <Title>Meu perfil</Title>
       </Container>
     </Background>
   );
 }
 
-Dashboard.navigationOptions = {
-  tabBarLabel: 'Agendamentos',
+Profile.navigationOptions = {
+  tabBarLabel: 'Meu perfil',
   tabBarIcon: ({ tintColor }) => (
-    <Icon name="event" size={20} color={tintColor} />
+    <Icon name="person" size={20} color={tintColor} />
   ),
 };
 
-export default Dashboard;
+export default Profile;
