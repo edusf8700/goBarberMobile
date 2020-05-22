@@ -20,7 +20,7 @@ function Appointment({ data, onCancel }) {
         <Avatar
           source={{
             uri: data.provider.avatar
-              ? `http://192.168.10.22:3333/files/${data.provider.avatar.path}`
+              ? `http://192.168.0.108:3333/files/${data.provider.avatar.path}`
               : `https://api.adorable.io/avatar/50/${data.provider.name}.png`,
           }}
         />
