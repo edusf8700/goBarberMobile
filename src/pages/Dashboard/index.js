@@ -1,21 +1,51 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import { Container, Title, List } from './styles';
 import Background from '~/components/Background';
 import Appointment from '~/components/Appointment';
+import api from '~/services/api';
 
 function Dashboard() {
-  const data = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+  const [appointments, setAppointments] = useState([]);
+
+  useEffect(() => {
+    async function loadAppointments() {
+      const response = await api.get('appointments');
+
+      setAppointments(response.data);
+    }
+
+    loadAppointments();
+  }, []);
+
+  async function handleCancel(id) {
+    const response = await api.delete(`appointments/${id}`);
+
+    setAppointments(
+      appointments.map((appointment) =>
+        appointment.id === id
+          ? { ...appointment, canceled_at: response.data.canceled_at }
+          : appointment
+      )
+    );
+  }
 
   return (
     <Background>
       <Container>
         <Title>Agendamentos</Title>
         <List
-          data={data}
-          keyExtractor={(item) => String(item)}
-          renderItem={({ item }) => <Appointment data={item} />}
+          data={appointments}
+          keyExtractor={(item) => String(item.id)}
+          renderItem={({ item }) => (
+            <Appointment
+              data={item}
+              onCancel={() => {
+                handleCancel(item.id);
+              }}
+            />
+          )}
         />
       </Container>
     </Background>
