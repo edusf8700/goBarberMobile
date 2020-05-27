@@ -34,7 +34,7 @@ function SelectProvider({ navigation }) {
               <Avatar
                 source={{
                   uri: item.avatar
-                    ? `http://192.168.10.19:3333/files/${item.avatar.path}`
+                    ? `http://192.168.10.24:3333/files/${item.avatar.path}`
                     : `https://api.adorable.io/avatar/50/${item.name}.png`,
                 }}
               />

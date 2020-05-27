@@ -10,7 +10,6 @@ export const ProviderList = styled.FlatList.attrs({
   showsVerticalScrollIndicator: false,
 })`
   margin-top: 60px;
-  padding: 0 20px;
 `;
 
 export const Provider = styled(RectButton)`
@@ -18,9 +17,10 @@ export const Provider = styled(RectButton)`
   padding: 20px;
   border-radius: 4px;
   flex: 1;
+  max-width: 160px;
 
   align-items: center;
-  margin: 0 10px 20px;
+  margin: 0 auto 20px;
 `;
 
 export const Avatar = styled.Image`
