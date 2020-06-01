@@ -49,7 +49,7 @@ function Confirm({ navigation }) {
 }
 
 Confirm.navigationOptions = ({ navigation }) => ({
-  title: 'Confirmar agendamento',
+  title: 'Confirmação',
   headerLeft: () => (
     <TouchableOpacity
       onPress={() => {
